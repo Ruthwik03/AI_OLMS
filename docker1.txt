@@ -1,0 +1,56 @@
+| Task                    | Command                               |
+| ----------------------- | ------------------------------------- |
+| Docker version          | `docker --version`                    |
+| Docker info             | `docker info`                         |
+| Download image          | `docker pull image`                   |
+| List images             | `docker images`                       |
+| Build image             | `docker build -t name .`              |
+| Run container           | `docker run image`                    |
+| Run background          | `docker run -d image`                 |
+| Port mapping            | `docker run -p 8080:8080 image`       |
+| List running containers | `docker ps`                           |
+| List all containers     | `docker ps -a`                        |
+| Stop                    | `docker stop container`               |
+| Start                   | `docker start container`              |
+| Restart                 | `docker restart container`            |
+| Remove container        | `docker rm container`                 |
+| Force remove            | `docker rm -f container`              |
+| Remove image            | `docker rmi image`                    |
+| Logs                    | `docker logs container`               |
+| Enter container         | `docker exec -it container /bin/bash` |
+| Login Docker Hub        | `docker login`                        |
+| Tag image               | `docker tag image USERNAME/image:tag` |
+| Push                    | `docker push USERNAME/image:tag`      |
+| Pull                    | `docker pull USERNAME/image:tag`      |
+
+
+
+
+touch Dockerfile
+notepad Dockerfile
+
+FROM tomcat:10.1-jdk17
+
+COPY target/ai-olms.war /usr/local/tomcat/webapps/ai-olms.war
+
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
+
+
+mvn clean package
+
+docker build -t mywebapp .
+
+docker run -d -p 8080:8080 --name mywebapp-container mywebapp
+
+docker login
+
+docker tag mywebapp USERNAME/mywebapp:latest
+
+docker push USERNAME/mywebapp:latest
+
+DOCKER HUB:
+docker login
+docker tag mywebapp USERNAME/mywebapp:latest
+docker push USERNAME/mywebapp:latest

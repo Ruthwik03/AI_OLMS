@@ -1,0 +1,64 @@
+UPLOAD
+
+git init
+
+git branch -M main
+
+git status
+
+git add .
+
+git commit -m "Initial commit"
+
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+
+git remote -v
+
+
+git push -u origin main
+
+FOR DOWNLOAD OF EXISTING PROJECT
+
+git clone https://github.com/USERNAME/REPOSITORY.git
+
+cd REPOSITORY
+
+git status
+
+git pull
+
+# Make changes
+
+git add .
+
+git commit -m "Updated project"
+
+git push
+ 
+COMPLETE BRANCH CODDES
+
+git clone https://github.com/USERNAME/REPOSITORY.git
+
+cd REPOSITORY
+
+git switch -c feature
+
+# Make changes
+
+git add .
+
+git commit -m "Added feature"
+
+git push -u origin feature
+
+git switch main
+
+git pull
+
+git merge feature
+
+git push
+
+
+
+git config --global user.name 
