@@ -5,6 +5,8 @@ git init
 git branch -M main
 
 git status
+touch .gitignore
+
 
 git add .
 
@@ -58,6 +60,11 @@ git pull
 git merge feature
 
 git push
+
+target/
+.classpath
+.project
+.settings/
 
 
 
