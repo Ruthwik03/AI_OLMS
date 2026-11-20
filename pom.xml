@@ -55,3 +55,28 @@ docker compose up -d --build
 docker compose ps
 docker compose logs app
 docker compose down
+
+jenkins
+
+build
+poll scm
+build setup :invoke top level maveen
+
+post build
+
+Archive the artifacts
+Build other project
+
+test
+Build Steps
+Copy artifacts from another project
+Invoke top-level Maven target
+
+Post-build Actions
+Archive the artifacts
+
+pipline
+Triggers
+poll scm
+Pipeline :from scm
+Script Path:Jenkinsfile
