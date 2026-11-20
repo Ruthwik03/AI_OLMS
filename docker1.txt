@@ -50,6 +50,46 @@ docker tag mywebapp USERNAME/mywebapp:latest
 
 docker push USERNAME/mywebapp:latest
 
+
+AWS
+
+
+icacls "mykey.pem" /inheritance:r
+icacls "mykey.pem" /grant:r "$($env:USERNAME):(R)"
+ssh -i "mykey.pem" ubuntu@ec2-23-23-15-182.compute-1.amazonaws.com
+
+sudo apt update
+sudo apt install docker.io -y
+git clone https://github.com/Ruthwik03/OLTRS.git
+cd OLTRS
+ls target/*.war
+nano Dockerfile
+sudo docker build -t myapp .
+sudo docker run -d --name oltrs -p 80:8080 myapp
+sudo docker ps
+
+Dockerfile
+
+FROM tomcat:9.0
+COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 DOCKER HUB:
 docker login
 docker tag mywebapp USERNAME/mywebapp:latest
