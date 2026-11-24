@@ -120,3 +120,41 @@ kubectl get deployments
 kubectl get services
 
 kubectl port-forward svc/mynginx 8081:80
+
+
+Nagios:
+
+
+docker pull jasonrivers/nagios:latest
+
+docker images
+
+docker run -d -p 8888:80 --name nagiosdemo jasonrivers/nagios:latest
+
+docker ps
+
+docker logs nagiosdemo
+
+docker exec -it nagiosdemo tail -f /opt/nagios/var/nagios.log
+
+docker stop nagiosdemo
+
+docker start nagiosdemo
+
+
+docker compose__
+
+# Create docker-compose.yml
+
+docker compose config
+docker compose pull
+docker compose up -d
+docker compose ps
+docker compose logs
+
+# Access localhost:8081
+
+docker compose stop
+docker compose start
+docker compose down
+
