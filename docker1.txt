@@ -91,3 +91,32 @@ docker login
 docker tag gitwebmaven:latest YOUR_USERNAME/gitwebmaven:v1
 docker push YOUR_USERNAME/gitwebmaven:v1
 docker pull YOUR_USERNAME/gitwebmaven:v1
+
+
+minikube
+kubernates:
+
+
+minikube version
+kubectl version --client
+
+minikube start --driver=docker
+minikube status
+
+kubectl get nodes
+
+kubectl create deployment mynginx --image=nginx
+
+kubectl get deployments
+kubectl get pods
+kubectl describe pods
+
+kubectl expose deployment mynginx --type=NodePort --port=80 --target-port=80
+
+kubectl scale deployment mynginx --replicas=4
+
+kubectl get pods
+kubectl get deployments
+kubectl get services
+
+kubectl port-forward svc/mynginx 8081:80
