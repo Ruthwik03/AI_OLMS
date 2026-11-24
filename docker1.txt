@@ -76,21 +76,18 @@ EXPOSE 8080
 CMD ["catalina.sh", "run"]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 DOCKER HUB:
 docker login
 docker tag mywebapp USERNAME/mywebapp:latest
 docker push USERNAME/mywebapp:latest
+
+Docker cli and docker hub
+docker build -t gitwebmaven .
+docker images
+docker run -d -p 8081:8080 --name webcontainer gitwebmaven
+docker ps
+
+docker login
+docker tag gitwebmaven:latest YOUR_USERNAME/gitwebmaven:v1
+docker push YOUR_USERNAME/gitwebmaven:v1
+docker pull YOUR_USERNAME/gitwebmaven:v1
