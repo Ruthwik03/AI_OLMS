@@ -158,3 +158,5 @@ docker compose stop
 docker compose start
 docker compose down
 
+# Install using npm
+npm install -g @openai/codex
